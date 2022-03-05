@@ -8,7 +8,7 @@ markers = [
     "ex2: a test runs against ExampleClass2",
 ]
 testpaths = [
-    "template_python_pkg",
+    "lahman",
 ]
 
 [tool.setuptools_scm]
