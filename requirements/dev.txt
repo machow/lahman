@@ -3,7 +3,6 @@ certifi==2021.10.8
 charset-normalizer==2.0.12
 idna==3.3
 iniconfig==1.1.1
--e git+ssh://git@github.com/machow/lahman-py.git@615eb03a4fba464dbfb93a71afc4a74fe006e0d2#egg=lahman
 numpy==1.22.2
 packaging==21.3
 pandas==1.4.1
