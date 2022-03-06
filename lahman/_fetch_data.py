@@ -4,13 +4,12 @@ import shutil
 import zipfile
 import pandas as pd
 
+# use shim until we drop python 3.8
+import importlib_resources as resources
+
 from pathlib import Path
 from functools import partial
 
-try:
-    from importlib import resources
-except ImportError:
-    import importlib_resources as resources
 
 BASE_URL = "https://github.com/chadwickbureau/baseballdatabank/archive/refs/tags/"
 TAG = "v2021.2"
