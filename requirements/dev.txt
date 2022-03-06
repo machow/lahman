@@ -14,7 +14,6 @@ importlib-resources==5.4.0
 iniconfig==1.1.1
 Jinja2==3.0.3
 keyring==23.5.0
--e git+ssh://git@github.com/machow/lahman-py.git@08be545865d0fb5d1f15d4b7c851fd0179f17ae9#egg=lahman
 MarkupSafe==2.1.0
 numpy==1.22.2
 packaging==21.3
