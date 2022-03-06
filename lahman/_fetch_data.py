@@ -5,7 +5,10 @@ import zipfile
 import pandas as pd
 
 # use shim until we drop python 3.8
-import importlib_resources as resources
+try:
+    from importlib.resources import files
+except ImportError:
+    from importlib_resources import files
 
 from pathlib import Path
 from functools import partial
@@ -13,7 +16,7 @@ from functools import partial
 
 BASE_URL = "https://github.com/chadwickbureau/baseballdatabank/archive/refs/tags/"
 TAG = "v2021.2"
-SOURCE_DIR = resources.files("lahman") / "data" 
+SOURCE_DIR = files("lahman") / "data" 
 SOURCE_PATH = SOURCE_DIR / "_source.zip"
 
 

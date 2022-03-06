@@ -1,11 +1,14 @@
-import importlib
 import pytest
 
-import importlib_resources as resources
+# use shim until we drop python 3.8
+try:
+    from importlib.resources import files
+except ImportError:
+    from importlib_resources import files
 
 # Note that this is copied from lahman._fetch_data, but repeated here, so
 # we can test the unpacking on import behavior
-SOURCE_DIR = resources.files("lahman") / "data" 
+SOURCE_DIR = files("lahman") / "data" 
 
 @pytest.fixture(scope="session")
 def cleanup():
