@@ -1,7 +1,7 @@
 import importlib
 import pytest
 
-from importlib import resources
+import importlib_resources as resources
 
 # Note that this is copied from lahman._fetch_data, but repeated here, so
 # we can test the unpacking on import behavior
