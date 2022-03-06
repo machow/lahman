@@ -28,11 +28,7 @@ jobs:
         include:
           # Checks based on specific requirements files ---
           - python-version: '3.8'
-            requirements: requirements/2020-01-01.txt
-          - python-version: '3.9'
-            requirements: requirements/2021-01-01.txt
-          - python-version: '3.10'
-            requirements: requirements/2022-01-01.txt
+            requirements: requirements/dev.txt
 
     steps:
       - uses: actions/checkout@v2

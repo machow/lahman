@@ -2,42 +2,22 @@ from importlib.metadata import version as _v
 
 # Set version -----------------------------------------------------------------
 
+
 __version__ = _v("lahman")
 
 del _v
 
+# Main ------------------------------------------------------------------------
 
-# Example class ---------------------------------------------------------------
+# Potentially unpack data ----
+from . import _fetch_data
 
+if not (_fetch_data.SOURCE_DIR / "AllstarFull.csv").exists():
+    print("Unpacking data...")
+    _fetch_data.unpack_data()
 
-class ExampleClass:
-    """Class that does not do anything.
+# Load data ---- 
+_lahman_fnames = list(_fetch_data.SOURCE_DIR.glob("*.csv"))
 
-    Parameters
-    ----------
-    x: str, optional
-        Description of parameter `x`.
-
-    See Also
-    --------
-    ExampleClass2 : Another example class.
-
-    Examples
-    --------
-
-    >>> obj = ExampleClass(1)
-    >>> obj.show()
-    """
-
-    def __init__(self, x: "str | None" = None):
-        self.x = x
-
-    def show(self) -> str:
-        """Return a representation of this class.
-        """
-
-        return repr(self)
-
-
-class ExampleClass2(ExampleClass):
-    """A subclass that also doesn't do anything."""
+_accessors = _fetch_data.create_data_accessors(_lahman_fnames)
+globals().update(_accessors)
