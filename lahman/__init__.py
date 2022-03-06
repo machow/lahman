@@ -1,5 +1,9 @@
-from importlib.metadata import version as _v
 from . import _fetch_data
+
+try:
+    from importlib.metadata import version as _v
+except ImportError:
+    from importlib_metadata import version as _v
 
 
 # Set version -----------------------------------------------------------------
